@@ -18,7 +18,7 @@
         inputs.nixpkgs.lib.genAttrs supportedSystems (
           system:
           f {
-            pkgs = import inputs.nixpkgs { inherit system; };
+            pkgs = import inputs.nixpkgs { inherit system; config = { cudaSupport = true; allowUnfree = true; }; };
           }
         );
     in
@@ -30,7 +30,7 @@
             packages = [
               pkgs.sox
               pkgs.bc
-              pkgs.ffmpeg
+              pkgs.ffmpeg-full
               pkgs.imagemagick
             ];
           };
