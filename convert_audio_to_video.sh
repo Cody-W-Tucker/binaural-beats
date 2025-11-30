@@ -17,6 +17,6 @@ if [ ! -f "$bg" ]; then
   exit 1
 fi
 
-ffmpeg -loop 1 -i "$bg" -i "$input" -c:v libx264 -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest "$output"
+ffmpeg -loop 1 -i "$bg" -i "$input" -c:v h264_nvenc -preset slow -tune stillimage -c:a aac -b:a 192k -pix_fmt yuv420p -shortest "$output"
 
 echo "Video created: $output"

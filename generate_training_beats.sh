@@ -14,11 +14,11 @@ make_beats() {
   rm -f assets/left.wav assets/right.wav
 }
 
-# 1. Core theta (4 Hz on 136 Hz)
-make_beats theta_core 136 4.0 0.85 1800
+# 1. Core theta (4 Hz on 200 Hz)
+make_beats theta_core 200 4.0 0.85 1800
 
-# 2. Harmonic alpha-theta (8 Hz on 272 Hz)
-make_beats theta_harm 272 8.0 0.55 1800
+# 2. Harmonic theta (7 Hz on 200 Hz)
+make_beats theta_harm 200 7.0 0.55 1800
 
 # 3. Pink-noise mask (STEREO, low level)
 sox -n -c 2 assets/pink_mask.wav synth 1800 pinknoise vol 0.30
